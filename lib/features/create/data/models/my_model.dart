@@ -84,20 +84,3 @@ class FeatureModel extends FeatureEntity2 {
         deletedAt,
       ];
 }
-class ReceiptTemplateModel {
-  final String header;
-  final String subheader;
-  final List<String> details;
-  final List<String> subtotals;
-  final String total;
-  final String footer;
-
-  ReceiptTemplateModel({
-    required this.header,
-    required this.subheader,
-    required this.details,
-    required this.subtotals,
-    required this.total,
-    required this.footer,
-  });
-}
