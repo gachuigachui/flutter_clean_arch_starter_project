@@ -1,6 +1,6 @@
 // FeatureHome
+// import 'package:bluetooth_print/bluetooth_print_model.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../core/presentation/screens/base_screen.dart';
 import '../../../../core/presentation/themes/default_theme.dart';
 import '../../../../core/presentation/widgets/custom_app_bar.dart';
@@ -65,3 +65,4 @@ class FeatureHomeScreen extends StatelessWidget {
     );
   }
 }
+

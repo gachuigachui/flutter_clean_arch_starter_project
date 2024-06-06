@@ -12,7 +12,7 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseScreen(
-      appBar: CustomAppBar.appBar(title: const Text("Clean Arch APP")),
+      appBar: CustomAppBar.appBar(title: const Text("ECR Printer")),
         drawer: Navigator.of(context).canPop() ? null : CustomDrawer.drawer(),
       body: const Padding(
         padding: EdgeInsets.all(8.0),
@@ -29,7 +29,7 @@ class DashboardScreen extends StatelessWidget {
 
               //
               Text(
-                "Featured Content",
+                "Your Documents",
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
                   fontSize: 16.0,
@@ -189,7 +189,7 @@ class HorizontalLiveClassVerticleList extends StatelessWidget {
                 Positioned(
                   child: Column(
                     children: [
-                      Text("Item"),
+                      Text("Title"),
                     ],
                   ),
                 ),

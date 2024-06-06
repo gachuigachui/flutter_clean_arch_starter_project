@@ -1,12 +1,15 @@
+// import 'package:esc_pos_utils/esc_pos_utils.dart';
+// import 'package:esc_pos_printer/esc_pos_printer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_clean_arch_starter_project/features/dashboard/presentation/screens/dashboard_screen.dart';
- 
+import 'package:flutter_clean_arch_starter_project/features/print/presentation/screens/print_now_screen.dart';
+
 import '../../../../../core/presentation/screens/base_screen.dart';
 import '../../../../../core/presentation/widgets/custom_app_bar.dart';
- 
+import '../../../features/print/presentation/screens/home.dart';
+
 class RootViewScreen extends StatefulWidget {
-  late final PageController pageController; // = PageController(initialPage: 0);
+  final PageController pageController = PageController(initialPage: 0);
   RootViewScreen({super.key});
 
   @override
@@ -21,29 +24,23 @@ class _RootViewScreenState extends State<RootViewScreen> {
   @override
   void initState() {
     // TODO:: Use AppGlobalState to determine the initial page
-    currentPage = 2;
+    currentPage = 1;
     pages = [
-       DashboardScreen(),
-       DashboardScreen(),
-       DashboardScreen(),
-       DashboardScreen(),
+      DashboardScreen(),
+      PrintNowScreen(),
+      DashboardScreen(),
     ];
-    widget.pageController = PageController(initialPage: currentPage);
 
     var labels = [
-      "Feature",
-      "Feature",
-      "Feature",
-      "Feature",
-      "Feature",
+      "Home",
+      "Print",
+      "Templates",
     ];
 
     List<IconData> icons = <IconData>[
-      Icons.school,
-      Icons.light,
       Icons.dashboard,
-      Icons.local_library,
-      Icons.people_alt,
+      Icons.print,
+      Icons.archive,
     ];
 
     bottomNavigationBarItems = [];
@@ -78,6 +75,7 @@ class _RootViewScreenState extends State<RootViewScreen> {
       ),
       body: PageView(
         controller: widget.pageController,
+        physics: NeverScrollableScrollPhysics(),
         children: pages,
       ),
     );
@@ -99,3 +97,4 @@ class StudyAndRevisionHomeScreen extends StatelessWidget {
     );
   }
 }
+
