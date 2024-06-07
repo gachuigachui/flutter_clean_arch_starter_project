@@ -2,12 +2,11 @@
 // import 'package:esc_pos_printer/esc_pos_printer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_arch_starter_project/features/dashboard/presentation/screens/dashboard_screen.dart';
-import 'package:flutter_clean_arch_starter_project/features/print/presentation/screens/print_now_screen.dart';
+import 'package:flutter_clean_arch_starter_project/features/printer/print/presentation/screens/print_now_screen.dart';
 
-import '../../../../../core/presentation/screens/base_screen.dart';
-import '../../../../../core/presentation/widgets/custom_app_bar.dart';
-import '../../../features/print/presentation/screens/home.dart';
-
+import '../../../../../core/presentation/screens/base_screen.dart'; 
+import '../../../features/templates/presentation/screens/home.dart';
+ 
 class RootViewScreen extends StatefulWidget {
   final PageController pageController = PageController(initialPage: 0);
   RootViewScreen({super.key});
@@ -25,10 +24,12 @@ class _RootViewScreenState extends State<RootViewScreen> {
   void initState() {
     // TODO:: Use AppGlobalState to determine the initial page
     currentPage = 1;
+
+    //
     pages = [
-      DashboardScreen(),
-      PrintNowScreen(),
-      DashboardScreen(),
+      const DashboardScreen(),
+      const PrintNowScreen(),
+      TemplatesHomeScreen(),
     ];
 
     var labels = [
@@ -75,26 +76,10 @@ class _RootViewScreenState extends State<RootViewScreen> {
       ),
       body: PageView(
         controller: widget.pageController,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         children: pages,
       ),
     );
   }
 }
-
-class StudyAndRevisionHomeScreen extends StatelessWidget {
-  const StudyAndRevisionHomeScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return BaseScreen(
-      appBar: CustomAppBar.appBar(title: Text('StudyAndRevisionHome')),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [Text("StudyAndRevisionHome")],
-        ),
-      ),
-    );
-  }
-}
-
+ 

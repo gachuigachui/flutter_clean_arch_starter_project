@@ -2,22 +2,10 @@
 import '../../../../core/domain/entities/entity.dart';
 
 abstract class FeatureEntity2 extends AbstractEntity {
-  final String id;
-  final String? description;
-  final DateTime createdAt;
-  final DateTime? updatedAt;
-  final DateTime? deletedAt;
+  final String id; 
   FeatureEntity2({
-    required this.id,
-    this.description,
-    required this.createdAt,
-    this.updatedAt,
-    this.deletedAt,
+    required this.id, 
   }) : super(
-          id: id,
-          description: description,
-          createdAt: createdAt,
-          updatedAt: updatedAt,
-          deletedAt: deletedAt,
+          id: id, 
         );
 }

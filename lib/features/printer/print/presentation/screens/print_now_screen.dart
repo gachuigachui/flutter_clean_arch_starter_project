@@ -7,10 +7,10 @@ import 'package:permission_handler/permission_handler.dart';
 
 import 'package:bluetooth_print/bluetooth_print.dart';
 import 'package:bluetooth_print/bluetooth_print_model.dart';
-import '../../../../core/presentation/screens/base_screen.dart';
-import '../../../../core/presentation/themes/default_theme.dart';
-import '../../../../core/presentation/widgets/custom_app_bar.dart';
-import '../../../../core/presentation/widgets/custom_card.dart';
+import '../../../../../core/presentation/screens/base_screen.dart';
+import '../../../../../core/presentation/themes/default_theme.dart';
+import '../../../../../core/presentation/widgets/custom_app_bar.dart';
+import '../../../../../core/presentation/widgets/custom_card.dart';
 
 class PrintNowScreen extends StatefulWidget {
   const PrintNowScreen({super.key});

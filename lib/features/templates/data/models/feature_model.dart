@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
 
+import 'dart:convert';
 import 'package:flutter_clean_arch_starter_project/features/dashboard/domain/entities/entity.dart';
 
 class FeatureModel extends FeatureEntity2 {
@@ -83,21 +83,4 @@ class FeatureModel extends FeatureEntity2 {
         updatedAt,
         deletedAt,
       ];
-}
-class ReceiptTemplateModel {
-  final String header;
-  final String subheader;
-  final List<String> details;
-  final List<String> subtotals;
-  final String total;
-  final String footer;
-
-  ReceiptTemplateModel({
-    required this.header,
-    required this.subheader,
-    required this.details,
-    required this.subtotals,
-    required this.total,
-    required this.footer,
-  });
 }

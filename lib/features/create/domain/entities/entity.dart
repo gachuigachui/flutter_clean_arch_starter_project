@@ -14,10 +14,6 @@ abstract class FeatureEntity2 extends AbstractEntity {
     this.updatedAt,
     this.deletedAt,
   }) : super(
-          id: id,
-          description: description,
-          createdAt: createdAt,
-          updatedAt: updatedAt,
-          deletedAt: deletedAt,
+          id: id, 
         );
 }

@@ -1,37 +1,61 @@
 // FeatureHome
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_arch_starter_project/core/presentation/widgets/template_preview_grid_tile_widget.dart';
 
 import '../../../../core/presentation/screens/base_screen.dart';
 import '../../../../core/presentation/themes/default_theme.dart';
 import '../../../../core/presentation/widgets/custom_app_bar.dart';
 import '../../../../core/presentation/widgets/custom_card.dart';
-import '../../../print/data/models/my_model.dart';
+import '../../../printer/print/data/models/my_model.dart';
+import '../../../../core/data/models/my_model.dart';
 import '../routes/route_constants.dart';
 import '../widgets/widgets.dart';
 
-class ReceiptTemplatesGallery extends StatelessWidget {
+class ReceiptTemplatesGalleryScreen extends StatelessWidget {
   final List<ReceiptTemplateModel> templates = [
     // Add some sample templates here
-    ReceiptTemplateModel(
-      header: '*** WONKA ENTERPRISES LIMITED ***',
-      subheader: 'P.O. BOX 67890-6062 NAIROBI',
-      details: [
-        '#01 OPERATOR 01 DEVICE #001',
-        'Receipt 0001',
-        'Date: 06.03.2022'
-      ],
-      subtotals: [
-        'EXCL AMT 410,881.58',
-        'VAT (16.00%) 65,741.05',
-        'TOTAL TAX 65,741.05'
-      ],
-      total: 'TOTAL AMOUNT 476,622.63',
-      footer: '**** END OF LEGAL RECEIPT ****',
-    ),
+    // ReceiptTemplateModel(
+    //   header: '*** WONKA ENTERPRISES LIMITED ***',
+    //   subheader: 'P.O. BOX 67890-6062 NAIROBI',
+    //   details: [
+    //     '#01 OPERATOR 01 DEVICE #001',
+    //     'Receipt 0001',
+    //     'Date: 06.03.2022'
+    //   ],
+    //   subtotals: [
+    //     'EXCL AMT 410,881.58',
+    //     'VAT (16.00%) 65,741.05',
+    //     'TOTAL TAX 65,741.05'
+    //   ],
+    //   total: 'TOTAL AMOUNT 476,622.63',
+    //   footer: '**** END OF LEGAL RECEIPT ****',
+    //     id: '',
+    //   createdAt: DateTime.now(),
+    //   searchTerms: [],
+    // ),
+    // ReceiptTemplateModel(
+    //   header: '*** WONKA ENTERPRISES LIMITED ***',
+    //   subheader: 'P.O. BOX 67890-6062 NAIROBI',
+    //   details: [
+    //     '#01 OPERATOR 01 DEVICE #001',
+    //     'Receipt 0001',
+    //     'Date: 06.03.2022'
+    //   ],
+    //   subtotals: [
+    //     'EXCL AMT 410,881.58',
+    //     'VAT (16.00%) 65,741.05',
+    //     'TOTAL TAX 65,741.05'
+    //   ],
+    //   total: 'TOTAL AMOUNT 476,622.63',
+    //   footer: '**** END OF LEGAL RECEIPT ****',
+    //     id: '',
+    //   createdAt: DateTime.now(),
+    //   searchTerms: [],
+    // ),
     // Add more templates if needed
   ];
 
-  ReceiptTemplatesGallery({super.key});
+  ReceiptTemplatesGalleryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +64,16 @@ class ReceiptTemplatesGallery extends StatelessWidget {
         title: const Text('Receipt Templates Gallery'),
       ),
       body: GridView.builder(
-        gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 1,
+          mainAxisExtent: 350,
+        ),
         itemCount: templates.length,
         itemBuilder: (context, index) {
-          return TemplatePreviewGridTileWidget(template: templates[index]);
+          return Transform.scale(
+            scale: 0.8,
+            child: TemplatePreviewGridTileWidget(template: templates[index]),
+          );
         },
       ),
     );
@@ -71,7 +100,8 @@ class ReceiptTemplatePreviewScreen extends StatelessWidget {
             Text(template.header,
                 style: const TextStyle(fontWeight: FontWeight.bold)),
             const SizedBox(height: 4),
-            Text(template.subheader, style: const TextStyle(color: Colors.grey)),
+            Text(template.subheader,
+                style: const TextStyle(color: Colors.grey)),
             const SizedBox(height: 8),
             ...template.details.map((detail) => Text(detail)).toList(),
             const Divider(),

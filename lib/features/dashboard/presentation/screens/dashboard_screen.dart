@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_arch_starter_project/core/presentation/widgets/horizontal_live_class_verticle_list.dart';
+import 'package:flutter_clean_arch_starter_project/core/presentation/widgets/hero_section_widget.dart';
  
 import '../../../../core/constants/route_constants.dart';
 import '../../../../core/presentation/screens/base_screen.dart';
 import '../../../../core/presentation/widgets/custom_app_bar.dart';
-import '../../../../core/presentation/widgets/custom_card.dart';
 import '../../../../core/presentation/widgets/custom_drawer.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -14,38 +15,38 @@ class DashboardScreen extends StatelessWidget {
     return BaseScreen(
       appBar: CustomAppBar.appBar(title: const Text("ECR Printer")),
         drawer: Navigator.of(context).canPop() ? null : CustomDrawer.drawer(),
-      body: const Padding(
-        padding: EdgeInsets.all(8.0),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // hero section
+            const HeroSectionWidget(),
 
-              // hero section
-              HeroSectionWidget(),
+            const SizedBox(height: 10),
 
-              SizedBox(height: 10),
-
-              //
-              Text(
-                "Your Documents",
-                style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  fontSize: 16.0,
-                ),
+            //
+            const Text(
+              "Your Documents",
+              style: TextStyle(
+                fontWeight: FontWeight.w900,
+                fontSize: 16.0,
               ),
-              SizedBox(height: 10),
+            ),
+            const SizedBox(height: 10),
 
-              //
-              HorizontalLiveClassVerticleList(),
+            //
+            Expanded(
+                child: HorizontalCardList(
+              horizontalCardListData: HorizontalCardList.demoList(),
+            )),
 
-              SizedBox(height: 10),
+            const SizedBox(height: 10),
 
-              //
-              // GridLessonTile()
-            ],
-          ),
+            //
+            // GridLessonTile()
+          ],
         ),
       ),
     );
@@ -90,7 +91,7 @@ class GridLessonTile extends StatelessWidget {
                       top: 5,
                       right: 5,
                       child: Padding(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                             horizontal: 16.0, vertical: 16.0),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -103,7 +104,7 @@ class GridLessonTile extends StatelessWidget {
                                 letterSpacing: 1.0,
                               ),
                             ),
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Container(
                               padding: const EdgeInsets.symmetric(
                                   vertical: 1.0, horizontal: 5.0),
@@ -154,136 +155,6 @@ class GridLessonTile extends StatelessWidget {
           ),
         );
       },
-    );
-  }
-}
-
-class HorizontalLiveClassVerticleList extends StatelessWidget {
-  const HorizontalLiveClassVerticleList({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 150,
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: 5,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (BuildContext context, int index) => InkWell(
-          onTap: () {
-            Navigator.of(context).pushNamed(featureRoutePrefix);
-          },
-          child: Container(
-            margin: const EdgeInsets.all(6.0),
-            height: 100,
-            width: MediaQuery.of(context).size.width / 4.3,
-            padding: const EdgeInsets.all(6.0),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(6.0),
-              color: Colors.orangeAccent,
-            ),
-            child: const Stack(
-              children: [
-                Positioned(
-                  child: Column(
-                    children: [
-                      Text("Title"),
-                    ],
-                  ),
-                ),
-                Positioned(
-                  bottom: 3,
-                  left: 3,
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.timer,
-                            size: 15,
-                          ),
-                          Text(
-                            "8:30PM",
-                            style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 10.0,
-                            ),
-                          ),
-                          Icon(
-                            Icons.person,
-                            size: 15,
-                          ),
-                          Text(
-                            "13",
-                            style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 10.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ), // Change this number according to your needs
-      ),
-    );
-  }
-}
-
-class HeroSectionWidget extends StatelessWidget {
-  const HeroSectionWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomCard(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            "Find your gem",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontWeight: FontWeight.w900,
-              fontSize: 32.0,
-            ),
-          ),
-          const SizedBox(height: 10),
-          const Text(
-            "This cool feature is designed to make your life easier.",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontWeight: FontWeight.w900,
-              fontSize: 16.0,
-            ),
-          ),
-          const SizedBox(height: 3),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 38.0),
-            child: Text(
-              "Engineering simply means life easier. What is your idea? Have you seen a p;roblem that you can solve with a digital platform?'.",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontSize: 12.0,
-              ),
-            ),
-          ),
-          const SizedBox(height: 15),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(featureRoutePrefix);
-              },
-              child: const Text("Explore Now"))
-        ],
-      ),
     );
   }
 }
