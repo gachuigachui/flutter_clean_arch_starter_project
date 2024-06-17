@@ -1,9 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_arch_starter_project/core/constants/route_constants.dart';
 
 import 'package:flutter_clean_arch_starter_project/core/presentation/themes/default_theme.dart';
-import 'package:flutter_clean_arch_starter_project/features/templates/presentation/routes/route_constants.dart';
-
+ 
 class HorizontalCardListData {
   final String title;
   final String subtitle;
@@ -54,7 +54,7 @@ class HorizontalCardList extends StatelessWidget {
       // scrollDirection: Axis.horizontal,
       itemBuilder: (BuildContext context, int index) => InkWell(
         onTap: () {
-          Navigator.of(context).pushNamed(templatesHomeRoute);
+          Navigator.of(context).pushNamed(featureHomeRoute);
         },
         child: Container(
           margin: const EdgeInsets.all(6.0),

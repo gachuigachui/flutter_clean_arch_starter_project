@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../features/dashboard/presentation/routes/dashboard_router.dart';
-import '../../../features/templates/presentation/routes/route_constants.dart';
-import '../../../features/templates/presentation/routes/router.dart';
+ 
 import '../../constants/route_constants.dart';
 
 abstract interface class RouterInterface {
@@ -16,9 +15,7 @@ class AppRouter {
     switch (settings.name?.split("/")[1]) {
       case dashboardRoutePrefix:
         return DashboardRouter.onGenerateRoute(settings: settings);
-      case templatesHomeRoute:
-        return TemplatesRouter.onGenerateRoute(settings: settings);
-
+ 
       case "/":
         return DashboardRouter.onGenerateRoute(settings: settings);
       //

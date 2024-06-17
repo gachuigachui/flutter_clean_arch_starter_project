@@ -7,8 +7,7 @@ import 'package:flutter_clean_arch_starter_project/core/abstract/abstract_receip
 import 'package:flutter_clean_arch_starter_project/core/abstract/business_information_entity.dart';
 import 'package:flutter_clean_arch_starter_project/core/abstract/customer_information_entity.dart';
 import 'package:flutter_clean_arch_starter_project/core/abstract/e_c_r_receipt_enity.dart';
-import 'package:flutter_clean_arch_starter_project/features/templates/domain/entities/entity.dart';
-import 'package:flutter_clean_arch_starter_project/core/abstract/receipt_category_entity.dart';
+ import 'package:flutter_clean_arch_starter_project/core/abstract/receipt_category_entity.dart';
 import 'package:flutter_clean_arch_starter_project/core/abstract/receipt_template_entity.dart';
 import 'package:flutter_clean_arch_starter_project/core/abstract/simple_invoice_entity.dart';
 import 'package:flutter_clean_arch_starter_project/core/abstract/tax_code_entity.dart';

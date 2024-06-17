@@ -2,10 +2,8 @@
 // import 'package:esc_pos_printer/esc_pos_printer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_arch_starter_project/features/dashboard/presentation/screens/dashboard_screen.dart';
-import 'package:flutter_clean_arch_starter_project/features/printer/print/presentation/screens/print_now_screen.dart';
-
+ 
 import '../../../../../core/presentation/screens/base_screen.dart'; 
-import '../../../features/templates/presentation/screens/home.dart';
  
 class RootViewScreen extends StatefulWidget {
   final PageController pageController = PageController(initialPage: 0);
@@ -28,8 +26,8 @@ class _RootViewScreenState extends State<RootViewScreen> {
     //
     pages = [
       const DashboardScreen(),
-      const PrintNowScreen(),
-      TemplatesHomeScreen(),
+      const DashboardScreen(),
+      const DashboardScreen(),
     ];
 
     var labels = [

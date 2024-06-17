@@ -5,8 +5,7 @@ import 'package:flutter_clean_arch_starter_project/core/domain/entities/entity.d
 import 'package:flutter_clean_arch_starter_project/core/mixin/mixin.dart';
 import 'package:flutter_clean_arch_starter_project/core/abstract/business_information_entity.dart';
 import 'package:flutter_clean_arch_starter_project/core/abstract/customer_information_entity.dart';
-import 'package:flutter_clean_arch_starter_project/features/templates/domain/entities/entity.dart';
-import 'package:flutter_clean_arch_starter_project/core/abstract/tax_code_entity.dart';
+ import 'package:flutter_clean_arch_starter_project/core/abstract/tax_code_entity.dart';
 
 abstract class SimpleInvoiceEntity extends AbstractEntity
     with TimestammpedMixin, SearchableMixin {

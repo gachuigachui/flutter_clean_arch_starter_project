@@ -3,8 +3,7 @@
 
 import 'package:flutter_clean_arch_starter_project/core/domain/entities/entity.dart';
 import 'package:flutter_clean_arch_starter_project/core/mixin/mixin.dart';
-import 'package:flutter_clean_arch_starter_project/features/templates/domain/entities/entity.dart';
-import 'package:flutter_clean_arch_starter_project/core/abstract/simple_invoice_entity.dart';
+ import 'package:flutter_clean_arch_starter_project/core/abstract/simple_invoice_entity.dart';
 
 abstract class ReceiptTemplateEntity extends AbstractEntity
     with SearchableMixin, TimestammpedMixin {
