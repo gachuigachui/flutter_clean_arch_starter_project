@@ -2,6 +2,7 @@
 import '../../../../core/domain/entities/entity.dart';
 
 abstract class FeatureEntity2 extends AbstractEntity {
+  @override
   final String id;
   final String? description;
   final DateTime createdAt;

@@ -1,7 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class CustomAppBar extends StatelessWidget {
   final Widget? title;
@@ -20,8 +19,8 @@ class CustomAppBar extends StatelessWidget {
     this.elevation = 4.0, // Default elevation value
     this.backgroundColor,
     this.foregroundColor,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

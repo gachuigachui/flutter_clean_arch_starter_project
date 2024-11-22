@@ -25,7 +25,7 @@ class CustomDrawer extends StatelessWidget {
             DrawerHeader(
               child: Column(
                 children: [
-                  Text("S O M O"),
+                  Text("Clean App"),
                 ],
               ),
             ),

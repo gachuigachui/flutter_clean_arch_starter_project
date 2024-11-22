@@ -14,7 +14,7 @@ class HeroSectionWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
-            "Quick Templates",
+            "Clean App!",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.w900,
@@ -23,7 +23,7 @@ class HeroSectionWidget extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           const Text(
-            "Professional receipt templates to print in seconds",
+            "This app follows the Clean Architecture Design parttern.",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.w900,
@@ -34,7 +34,7 @@ class HeroSectionWidget extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 38.0),
             child: Text(
-              "Build trust with customers by giving your receipts a credible and genuine look by using our Receipt Remplates",
+              "Each feature can be maintained without impacting the rest of the app.",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.normal,

@@ -93,7 +93,7 @@ class HorizontalCardList extends StatelessWidget {
                           horizontalCardListData[index].subtitle,
                           style: tinyTextPrimary,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         // const Icon(
@@ -105,13 +105,13 @@ class HorizontalCardList extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                "${mapKey}",
+                                mapKey,
                                 style: const TextStyle(
                                   fontWeight: FontWeight.normal,
                                   fontSize: 10.0,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 3,
                               ),
                               Text(
@@ -121,7 +121,7 @@ class HorizontalCardList extends StatelessWidget {
                                   fontSize: 10.0,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                             ],

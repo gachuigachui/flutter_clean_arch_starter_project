@@ -25,15 +25,13 @@ class DashboardRouter implements RouterInterface {
     }
   }
 
-  static MaterialPageRoute _generateDashboardHomeRoute(
-          {RouteSettings? settings}) =>
+  static MaterialPageRoute _generateDashboardHomeRoute() =>
       MaterialPageRoute(
-        builder: (context) => DashboardScreen(),
+        builder: (context) => const DashboardScreen(),
       );
-  static MaterialPageRoute _generateFeatureItemActionRoute(
-          {RouteSettings? settings}) =>
+  static MaterialPageRoute _generateFeatureItemActionRoute() =>
       MaterialPageRoute(
-        builder: (context) => DashboardScreen(),
+        builder: (context) => const DashboardScreen(),
       );
   // static MaterialPageRoute _generateDashboardHomeRoute(
   //         {RouteSettings? settings}) =>

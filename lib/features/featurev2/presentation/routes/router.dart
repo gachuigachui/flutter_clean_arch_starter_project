@@ -16,7 +16,7 @@ class FeatureRouter {
   }
 
   static MaterialPageRoute _generateFeaureHomeRoute() =>
-      MaterialPageRoute(builder: (context) => FeatureHomeScreen());
+      MaterialPageRoute(builder: (context) => const FeatureHomeScreen());
   static MaterialPageRoute _generateRouteErrorRoute(
           {required RouteSettings settings}) =>
       MaterialPageRoute(

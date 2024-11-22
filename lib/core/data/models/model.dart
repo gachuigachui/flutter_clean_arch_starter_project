@@ -4,6 +4,7 @@ import 'dart:convert';
 import '../../domain/entities/entity.dart';
 
 class Model extends AbstractEntity {
+  @override
   final String id;
   final String? description;
   final DateTime createdAt;

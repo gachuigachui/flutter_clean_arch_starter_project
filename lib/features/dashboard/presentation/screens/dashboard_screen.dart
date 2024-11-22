@@ -13,7 +13,7 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseScreen(
-      appBar: CustomAppBar.appBar(title: const Text("ECR Printer")),
+      appBar: CustomAppBar.appBar(title: const Text("App Dashboard")),
         drawer: Navigator.of(context).canPop() ? null : CustomDrawer.drawer(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -97,7 +97,7 @@ class GridLessonTile extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             const Text(
-                              "Lesson Title",
+                              "Item Name",
                               style: TextStyle(
                                 fontWeight: FontWeight.w900,
                                 fontSize: 16.0,
@@ -113,7 +113,7 @@ class GridLessonTile extends StatelessWidget {
                                 border: Border.all(color: Colors.white),
                               ),
                               child: const Text(
-                                "Topic | Course",
+                                "CATEGORY | NICHE",
                                 style: TextStyle(
                                   fontWeight: FontWeight.normal,
                                   fontSize: 12.0,

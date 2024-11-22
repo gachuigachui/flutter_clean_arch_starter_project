@@ -11,7 +11,7 @@ abstract interface class RouterInterface {
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
-    print("AppRouter:: " + "${settings.name?.split("/")[1]}");
+    print("AppRouter:: " "${settings.name?.split("/")[1]}");
     switch (settings.name?.split("/")[1]) {
       case dashboardRoutePrefix:
         return DashboardRouter.onGenerateRoute(settings: settings);

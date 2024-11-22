@@ -5,7 +5,7 @@ import '../../data/models/my_model.dart';
 class TemplatePreviewGridTileWidget extends StatelessWidget {
   final ReceiptTemplateModel template;
 
-  TemplatePreviewGridTileWidget({required this.template});
+  const TemplatePreviewGridTileWidget({super.key, required this.template});
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,11 @@ class TemplatePreviewGridTileWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(template.header,
-                  style: TextStyle(fontWeight: FontWeight.bold)),
-              SizedBox(height: 4),
-              Text(template.subheader, style: TextStyle(color: Colors.grey)),
-              SizedBox(height: 8),
-              Text(template.total, style: TextStyle(fontSize: 18)),
+                  style: const TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 4),
+              Text(template.subheader, style: const TextStyle(color: Colors.grey)),
+              const SizedBox(height: 8),
+              Text(template.total, style: const TextStyle(fontSize: 18)),
             ],
           ),
         ),

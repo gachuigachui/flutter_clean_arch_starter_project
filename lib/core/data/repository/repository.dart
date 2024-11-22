@@ -8,7 +8,7 @@ import '../models/model.dart';
 class FeatureRepository
     implements FeatureRepositoryInterface<Model, AbstractParams> {
    Future<Either<Failure, Model?>> create({AbstractParams? params}) async {
-    return Right(null);
+    return const Right(null);
   }
   
   @override

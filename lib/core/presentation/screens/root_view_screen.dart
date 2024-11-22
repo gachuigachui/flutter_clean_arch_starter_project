@@ -32,8 +32,8 @@ class _RootViewScreenState extends State<RootViewScreen> {
 
     var labels = [
       "Home",
-      "Print",
-      "Templates",
+      "Feature",
+      "Feature 3",
     ];
 
     List<IconData> icons = <IconData>[
@@ -64,8 +64,9 @@ class _RootViewScreenState extends State<RootViewScreen> {
         unselectedItemColor: Colors.black87,
         items: bottomNavigationBarItems,
         onTap: (value) {
-          if (Navigator.of(context).canPop())
+          if (Navigator.of(context).canPop()) {
             Navigator.of(context).popUntil((route) => route.isFirst);
+          }
           setState(() {
             currentPage = value;
           });
